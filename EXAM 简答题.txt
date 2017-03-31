@@ -1,0 +1,31 @@
+1. Java 实现多线程都有哪些方式？ 
+答案：线程的实现由两种：继承Thread类，实现Runnable接口    
+ 
+2. 如何实现线程同步？举例说明 
+答案：1.在代码上加上synchronized关键字，加锁 ，方法同步，代码块同步
+synchronized(this){//代码块
+
+wait();
+}
+
+public synchronized void tell(){//方法同步
+}
+
+2.在方法中调用notify（）方法;
+public  void tell(){
+
+notify();
+
+}
+     
+3. 对比 List/Set/Map，以及简要阐述其应用场景？ 
+答案：List 和 Set都继承自 Collection 接口
+List集合里面可以存放的元素是可以重复的， 放入有序，位置无序，查找元素方便
+Set里面的元素不可以重复，元素放入无序，位置有序  ，插入和删除元素方便
+Map里面的元素是以键值对的形式存放的 ，用于存入 key-value  
+
+4. 简要阐述一下 HashTable/HashMap/ConcurrentHashMap 的区别和联系？
+前两者都是实现自Map接口
+HashTable 是线程安全的,锁机制，一次性锁定整个hashtable
+HashMap是非线程安全的 ，键可为null
+ConcurrentHashMap是基于HashTable的的线程安全的资源浪费上解决，ConcurrentHashMap
